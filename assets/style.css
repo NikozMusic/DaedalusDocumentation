@@ -158,7 +158,7 @@ body {
 }
 
 #content {
-    width: min(100%, 980px);
+    width: min(100%, 1080px);
     flex: 1;
     margin: 0 auto;
     padding: clamp(2.5rem, 7vw, 5.5rem) clamp(1.5rem, 6vw, 5.5rem);
@@ -211,7 +211,7 @@ body {
 #content p,
 #content ul,
 #content ol {
-    max-width: 76ch;
+    max-width: 100ch;
 }
 
 #content a {

@@ -24,12 +24,22 @@
     {
       "name": "Getting Started",
       "file": "Getting Started/gettingstarted.md",
-      "priority": 1
+      "priority": 100
     },
     {
       "name": "Module",
-      "file": "Concepts/module.md",
+      "file": "Core/modules.md",
       "priority": 0
+    },
+    {
+      "name": "Installation",
+      "file": "Getting Started/installation.md",
+      "priority": 99
+    },
+    {
+      "name": "Your First Module",
+      "file": "Getting Started/firstmodule.md",
+      "priority": 98
     }
   ]
 }
