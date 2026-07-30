@@ -170,17 +170,24 @@ body {
     margin-top: 0;
 }
 
-#content h1,
+#content h1 {
+    color: #111a2d;
+    font-family: "Valve", Inter, sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1.16;
+}
+
 #content h2,
 #content h3,
 #content h4,
 #content h5,
 #content h6 {
     color: #111a2d;
-    font-family: "Valve", Inter, sans-serif;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    line-height: 1.16;
+    font-family: inherit;
+    font-weight: 750;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
 }
 
 #content h1 {

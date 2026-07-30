@@ -25,6 +25,11 @@
       "name": "Getting Started",
       "file": "Getting Started/gettingstarted.md",
       "priority": 1
+    },
+    {
+      "name": "Module",
+      "file": "Concepts/module.md",
+      "priority": 0
     }
   ]
 }

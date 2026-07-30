@@ -30,6 +30,8 @@ async function init() {
     const sidebar = document.getElementById("sidebar");
     const groups = new Map();
     const homePage = { file: "index.md", name: "About Daedalus" };
+    const pageStorageKey = "daedalus.documentation.currentPage";
+    const pageLinks = new Map();
     let activeLink;
 
     async function openPage(page, link) {
@@ -38,20 +40,21 @@ async function init() {
             activeLink?.classList.remove("is-active");
             link?.classList.add("is-active");
             activeLink = link;
+            localStorage.setItem(pageStorageKey, page.file);
+            document.title = `${page.name} | Daedalus Documentation`;
         } catch (error) {
             document.getElementById("content").textContent = error.message;
             console.error(error);
         }
     }
 
-    sidebar.querySelector(".brand").addEventListener("click", event => {
-        event.preventDefault();
-        openPage(homePage);
-    });
-
     const pages = [...config.pages].sort((first, second) =>
         (Number(second.priority) || 0) - (Number(first.priority) || 0)
         || first.name.localeCompare(second.name));
+    const pagesByFile = new Map([
+        [homePage.file, homePage],
+        ...pages.map(page => [page.file, page])
+    ]);
 
     pages.forEach(page => {
         const pathParts = page.file.split("/");
@@ -79,13 +82,48 @@ async function init() {
 
         link.onclick = event => {
             event.preventDefault();
-            openPage(page, link);
+            navigateTo(page);
         };
 
+        pageLinks.set(page.file, link);
         groups.get(folder).appendChild(link);
     });
 
-    openPage(homePage);
+    function getPageFromHash() {
+        try {
+            return pagesByFile.get(decodeURIComponent(window.location.hash.slice(1)));
+        } catch {
+            return undefined;
+        }
+    }
+
+    function navigateTo(page) {
+        const hash = `#${encodeURIComponent(page.file)}`;
+
+        if (window.location.hash === hash) {
+            openPage(page, pageLinks.get(page.file));
+        } else {
+            window.location.hash = hash;
+        }
+    }
+
+    sidebar.querySelector(".brand").addEventListener("click", event => {
+        event.preventDefault();
+        navigateTo(homePage);
+    });
+
+    window.addEventListener("hashchange", () => {
+        const page = getPageFromHash();
+
+        if (page) {
+            openPage(page, pageLinks.get(page.file));
+        }
+    });
+
+    const savedPage = pagesByFile.get(localStorage.getItem(pageStorageKey));
+    const initialPage = getPageFromHash() ?? savedPage ?? homePage;
+
+    openPage(initialPage, pageLinks.get(initialPage.file));
 }
 
 init().catch(console.error);
