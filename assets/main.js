@@ -29,7 +29,25 @@ async function init() {
 
     const sidebar = document.getElementById("sidebar");
     const groups = new Map();
+    const homePage = { file: "index.md", name: "About Daedalus" };
     let activeLink;
+
+    async function openPage(page, link) {
+        try {
+            await loadPage(page.file);
+            activeLink?.classList.remove("is-active");
+            link?.classList.add("is-active");
+            activeLink = link;
+        } catch (error) {
+            document.getElementById("content").textContent = error.message;
+            console.error(error);
+        }
+    }
+
+    sidebar.querySelector(".brand").addEventListener("click", event => {
+        event.preventDefault();
+        openPage(homePage);
+    });
 
     const pages = [...config.pages].sort((first, second) =>
         (Number(second.priority) || 0) - (Number(first.priority) || 0)
@@ -59,24 +77,15 @@ async function init() {
         link.href = `#${encodeURIComponent(page.file)}`;
         link.textContent = page.name;
 
-        link.onclick = async event => {
+        link.onclick = event => {
             event.preventDefault();
-
-            try {
-                await loadPage(page.file);
-                activeLink?.classList.remove("is-active");
-                link.classList.add("is-active");
-                activeLink = link;
-            } catch (error) {
-                document.getElementById("content").textContent = error.message;
-                console.error(error);
-            }
+            openPage(page, link);
         };
 
         groups.get(folder).appendChild(link);
     });
 
-    sidebar.querySelector("a")?.click();
+    openPage(homePage);
 }
 
 init().catch(console.error);
