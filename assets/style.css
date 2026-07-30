@@ -141,12 +141,10 @@ body {
     transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
 }
 
-.nav-list a:hover,
-.nav-list a:focus-visible {
-    border-color: #2e426b;
-    background: #182440;
+.nav-list a:hover {
+    background: rgba(255,255,255,.06);
+    border-color: rgba(255,255,255,.08);
     color: white;
-    outline: none;
 }
 
 .nav-list a.is-active {
