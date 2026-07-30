@@ -2,19 +2,69 @@
   "title": "Daedalus Runtime",
   "pages": [
     {
-      "name": "CoreAPI",
-      "file": "APIs/core.md",
-      "priority": 0
+      "name": "BlockAPI",
+      "file": "APIs/block.md",
+      "priority": 10
     },
     {
-      "name": "EventsAPI",
-      "file": "APIs/events.md",
-      "priority": 0
+      "name": "CommandAPI",
+      "file": "APIs/command.md",
+      "priority": 10
+    },
+    {
+      "name": "DataAPI",
+      "file": "APIs/data.md",
+      "priority": 10
     },
     {
       "name": "EntityAPI",
       "file": "APIs/entity.md",
-      "priority": 0
+      "priority": 10
+    },
+    {
+      "name": "EventsAPI",
+      "file": "APIs/events.md",
+      "priority": 10
+    },
+    {
+      "name": "GuiAPI",
+      "file": "APIs/gui.md",
+      "priority": 10
+    },
+    {
+      "name": "ItemAPI",
+      "file": "APIs/item.md",
+      "priority": 10
+    },
+    {
+      "name": "CoreAPI",
+      "file": "APIs/core.md",
+      "priority": 10
+    },
+    {
+      "name": "PlayersAPI",
+      "file": "APIs/players.md",
+      "priority": 10
+    },
+    {
+      "name": "RaycastAPI",
+      "file": "APIs/raycast.md",
+      "priority": 10
+    },
+    {
+      "name": "ServerAPI",
+      "file": "APIs/server.md",
+      "priority": 10
+    },
+    {
+      "name": "TextAPI",
+      "file": "APIs/text.md",
+      "priority": 10
+    },
+    {
+      "name": "Shared Types",
+      "file": "APIs/types.md",
+      "priority": 11
     },
     {
       "name": "PlayerAPI",
