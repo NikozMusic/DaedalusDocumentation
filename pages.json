@@ -1,0 +1,30 @@
+{
+  "title": "Daedalus Runtime",
+  "pages": [
+    {
+      "name": "CoreAPI",
+      "file": "APIs/core.md",
+      "priority": 0
+    },
+    {
+      "name": "EventsAPI",
+      "file": "APIs/events.md",
+      "priority": 0
+    },
+    {
+      "name": "EntityAPI",
+      "file": "APIs/entity.md",
+      "priority": 0
+    },
+    {
+      "name": "PlayerAPI",
+      "file": "APIs/player.md",
+      "priority": 0
+    },
+    {
+      "name": "Getting Started",
+      "file": "Getting Started/gettingstarted.md",
+      "priority": 1
+    }
+  ]
+}

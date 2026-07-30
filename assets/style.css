@@ -1,0 +1,311 @@
+@font-face {
+    font-family: "Valve";
+    src: url("valve.otf") format("opentype");
+    font-display: swap;
+}
+
+:root {
+    color: #1c2434;
+    background: #f6f8fc;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-synthesis: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background: #f6f8fc;
+    line-height: 1.65;
+}
+
+#sidebar {
+    position: sticky;
+    top: 0;
+    width: 280px;
+    height: 100vh;
+    flex: 0 0 280px;
+    overflow-y: auto;
+    padding: 1.5rem 1rem;
+    background: linear-gradient(165deg, #121a2c 0%, #0b1120 100%);
+    border-right: 1px solid #223150;
+    color: #dbe6ff;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin: 0 0 2rem;
+    padding: 0.35rem 0.5rem;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.brand:focus-visible {
+    outline: 2px solid #7895ff;
+    outline-offset: 3px;
+}
+
+.brand img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.brand span {
+    font-family: "Valve", sans-serif;
+    font-size: 1.45rem;
+    letter-spacing: 0.025em;
+    line-height: 1;
+}
+
+.brand small {
+    display: block;
+    margin-top: 0.35rem;
+    color: #9eb0d5;
+    font-family: inherit;
+    font-size: 0.53rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.nav-section {
+    margin: 0 0 0.9rem;
+}
+
+.nav-section summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    color: #8fa5d2;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    list-style: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+}
+
+.nav-section summary::-webkit-details-marker {
+    display: none;
+}
+
+.nav-section summary::after {
+    content: "›";
+    color: #7895ff;
+    font-size: 1.1rem;
+    line-height: 1;
+    transform: rotate(0deg);
+    transition: transform 160ms ease;
+}
+
+.nav-section[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.nav-section summary:hover,
+.nav-section summary:focus-visible {
+    color: white;
+    outline: none;
+}
+
+.nav-list {
+    display: grid;
+    gap: 0.18rem;
+    margin: 0.15rem 0 0.3rem;
+}
+
+.nav-list a {
+    display: block;
+    padding: 0.5rem 0.65rem;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    color: #c4d0e9;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    text-decoration: none;
+    transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+    border-color: #2e426b;
+    background: #182440;
+    color: white;
+    outline: none;
+}
+
+.nav-list a.is-active {
+    border-color: #405ea5;
+    background: linear-gradient(90deg, #284fbb 0%, #1d397c 100%);
+    box-shadow: inset 3px 0 #8ca8ff;
+    color: white;
+    font-weight: 650;
+}
+
+#content {
+    width: min(100%, 980px);
+    flex: 1;
+    margin: 0 auto;
+    padding: clamp(2.5rem, 7vw, 5.5rem) clamp(1.5rem, 6vw, 5.5rem);
+    color: #293246;
+    font-size: 1rem;
+}
+
+#content > :first-child {
+    margin-top: 0;
+}
+
+#content h1,
+#content h2,
+#content h3,
+#content h4,
+#content h5,
+#content h6 {
+    color: #111a2d;
+    font-family: "Valve", Inter, sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1.16;
+}
+
+#content h1 {
+    margin: 0 0 2.2rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid #dbe2f0;
+    font-size: clamp(2.35rem, 5vw, 3.75rem);
+}
+
+#content h2 {
+    margin: 3rem 0 1rem;
+    font-size: clamp(1.65rem, 3vw, 2.25rem);
+}
+
+#content h3 {
+    margin: 2rem 0 0.7rem;
+    color: #3455a5;
+    font-size: 1.28rem;
+}
+
+#content p,
+#content ul,
+#content ol {
+    max-width: 76ch;
+}
+
+#content a {
+    color: #315ec5;
+    font-weight: 600;
+    text-decoration-color: #aabcf0;
+    text-underline-offset: 0.16em;
+}
+
+#content a:hover {
+    color: #193d91;
+}
+
+#content hr {
+    height: 1px;
+    margin: 2.5rem 0;
+    border: 0;
+    background: #dbe2f0;
+}
+
+#content blockquote {
+    margin: 1.5rem 0;
+    padding: 0.8rem 1rem;
+    border-left: 4px solid #5477d9;
+    border-radius: 0 8px 8px 0;
+    background: #edf2ff;
+    color: #46536f;
+}
+
+#content pre {
+    margin: 1.5rem 0;
+    padding: 1.15rem 1.3rem;
+    overflow-x: auto;
+    border: 1px solid #263454;
+    border-radius: 10px;
+    background: #111a2c;
+    box-shadow: 0 10px 22px rgb(17 26 44 / 12%);
+    color: #e9efff;
+    line-height: 1.55;
+}
+
+#content code {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+#content :not(pre) > code {
+    padding: 0.16em 0.4em;
+    border: 1px solid #d6e0fa;
+    border-radius: 5px;
+    background: #edf2ff;
+    color: #244aaf;
+    font-size: 0.87em;
+}
+
+#content table {
+    width: 100%;
+    margin: 1.5rem 0;
+    overflow: hidden;
+    border: 1px solid #dbe2f0;
+    border-collapse: separate;
+    border-radius: 8px;
+    border-spacing: 0;
+}
+
+#content th,
+#content td {
+    padding: 0.7rem 0.9rem;
+    border-bottom: 1px solid #e5eaf4;
+    text-align: left;
+}
+
+#content th {
+    background: #edf2ff;
+    color: #233253;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+#content tr:last-child td {
+    border-bottom: 0;
+}
+
+@media (max-width: 760px) {
+    body {
+        display: block;
+    }
+
+    #sidebar {
+        position: static;
+        width: auto;
+        height: auto;
+        min-height: 0;
+        padding: 1rem;
+    }
+
+    .brand {
+        margin-bottom: 1rem;
+    }
+
+    #content {
+        padding: 2.5rem 1.25rem;
+    }
+}
