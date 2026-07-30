@@ -1,4 +1,4 @@
-# Core API
+# CoreAPI
 
 The `minecraft` API provides server information and logging helpers.
 
