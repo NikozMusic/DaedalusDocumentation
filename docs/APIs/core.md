@@ -2,7 +2,7 @@
 
 The `minecraft` API provides server information and logging helpers.
 
-|                                 |                                                       |
+| Function                        | Description                                           |
 |---------------------------------|-------------------------------------------------------|
 | minecraft.log()                 | Logs the provided string to the console               |
 | minecraft.warn()                | Sends the provided string as a warning to the console |

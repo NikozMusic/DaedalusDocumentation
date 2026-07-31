@@ -1,6 +1,6 @@
 # Shared Types
 
-These are the Minecraft values used throughout the Daedalus APIs.
+These are the Minecraft values used throughout the Daedalus APIs. These values are also referred to as "Literals" as that is the Java name for them.
 
 | Type           | Description                                                                         |
 |----------------|-------------------------------------------------------------------------------------|

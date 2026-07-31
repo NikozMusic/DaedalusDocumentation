@@ -67,9 +67,9 @@
       "priority": 11
     },
     {
-      "name": "PlayerAPI",
-      "file": "APIs/player.md",
-      "priority": 0
+      "name": "WorldAPI",
+      "file": "APIs/world.md",
+      "priority": 10
     },
     {
       "name": "Getting Started",

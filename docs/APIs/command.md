@@ -8,7 +8,7 @@ All executions return two values, a `result` and an `output`. Result will be the
 
 this API does not relate to `Custom Commands`. For this see `module` in `core`.
 
-|                                       |                                                                              |
+| Function                              | Description                                                                  |
 |---------------------------------------|------------------------------------------------------------------------------|
 | command.execute(command)              | Executes the provided string as a comand on the server                       |
 | command.executeAs(entity, command)    | Executes the provided string as a command in the name of the provided entity |
